@@ -8,7 +8,7 @@ public class SbLoggingApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SbLoggingApplication.class, args);
-		
+		/*main application*/
 	}
 
 }
