@@ -1,0 +1,20 @@
+<configuration>
+    <appender name="RollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>vikash-logs.log</file>
+        <encoder>
+            <pattern>%d{dd-MM-yyyy HH:mm:ss} [%thread] %-5level %logger{40}.%M:%L - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!--daily rollover-->
+            <fileNamePattern>vikash-logs.%d{dd-MM-yyyy}.%i.log</fileNamePattern>
+
+            <!--keep 30 days history-->
+            <maxFileSize>100MB</maxFileSize>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="RollingFile" />
+    </root>
+</configuration>
